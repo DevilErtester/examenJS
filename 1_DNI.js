@@ -39,7 +39,7 @@ function hacer_apuesta(){
 
     
     let impor_ganado;
-    // checking if the player has any money left
+    // checking if the player has any money
     if(saldo > 0){
         if(aposta === totalDice){
             switch(aposta){

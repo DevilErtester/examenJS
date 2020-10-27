@@ -2,25 +2,37 @@ window.addEventListener('DOMContentLoaded',main);
 
 function main(){
     
-    let hoy = new Date();
+    let ultimaData = new Date();
     let myaniversari = new Date()
     let array_dates = new Array();
 
-    hoy.getDate();
-    hoy.getMonth();
-    hoy.getFullYear();
+    let dia = ultimaData.getDate();
+    let month = ultimaData.getMonth();
+    let year = ultimaData.getFullYear();
 
     //modifico el dia/mes/año
-    myaniversari.setDate(17);
-    myaniversari.setMonth(8);
+    myaniversari.setDate(6);
+    myaniversari.setMonth(3);
     myaniversari.setFullYear(2021);
-
-    var difM = hoy - myaniversari // diferencia en milisegundos
-    var difD = difM / (1000 * 60 * 60 * 24) // diferencia en dias
-    
-
-    alert(difD);
-   
+    var dateArray = getDates(ultimaData, myaniversari);
+    for (i = 0; i < dateArray.length; i ++ ) {
         
-    
+        document.getElementById('sortida').innerHTML+=" </br>"+dateArray[i];
+    }
 }
+Date.prototype.addDays = function(days) {
+    var dat = new Date(this.valueOf())
+    dat.setDate(dat.getDate() + days);
+    return dat;
+}
+
+function getDates(startDate, stopDate) {
+   var dateArray = new Array();
+   var currentDate = startDate;
+   while (currentDate <= stopDate) {
+     dateArray.push(currentDate)
+     currentDate = currentDate.addDays(1);
+   }
+   return dateArray;
+ }
+
