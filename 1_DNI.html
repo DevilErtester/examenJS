@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercici</title>
+	<style>
+		input { 
+		    text-align: right; 
+		}
+	</style>
+	<script src="1_DNI.js"></script>
+    </head>
+    <body>
+        <h1>JOC DE DAUS</h1>
+        <p>Es tracta de simular un joc de llançament de 2 daus, permeten apostar diners.</p>
+        <p>
+        L'usuari començarà amb un capital inicial de 1.000 €.
+	Abans de cada tirada l'usuari ha d'especificar quina quantitat vol
+	apostar (que se li restarà del capital) i quina creu que serà la suma dels daus, 
+	introduint el nombre corresponent. 
+	Al prémer el botó, la web ha de simular la jugada (tirar dos daus de l’1 al 6)
+	 i mostrar el resultat dins l'etiqueta amb
+	  <b>id avis</b> i actualitzar el saldo restant l'import apostat.
+	</p>
+	<p>
+	Si guanya, és a dir, si la suma dels dos daus coincideix amb el valor escollit per l’usuari, 
+	se li
+	premiarà amb una quantitat que depen del valor de la suma. 
+	</p>
+	<ul>
+		<li>Si la suma és 7, el premi és 3 vegades la quantitat apostada.</li>
+		<li>Si la suma és 6 o 8, el premi és 5 vegades la quantitat apostada.</li>
+		<li>Si la suma és 5 o 9, el premi és 7 vegades la quantitat apostada.</li>
+		<li>Si la suma és 4 o 10, el premi és 10 vegades la quantitat apostada.</li>
+		<li>Si la suma és 3 o 11, el premi és 15 vegades la quantitat apostada.</li>
+		<li>Si la suma és 2 o 12, el premi és 30 vegades la quantitat apostada.</li>
+		<li>Si perd, se li notificarà que ha perdut dins l'etiqueta amb <b>id avis</b>.</li>
+	</ul>
+	<p>
+  El programa mostrarà dins l'etiqueta amb <b>id avis</b> un missatge com el següent:
+  <blockquote><h3>
+      Import guanyat = XXXX, has apostat YYYYY a la suma ZZZZ;
+  </h3></blockquote>
+	S'actualitzarà el capital del que disposa (SALDO) i es netejarà el formulari (només els camps amb la quantitat apostada i la suma dels daus)
+	per poder continuar jugant. 
+  </p>
+  <p>L'usuari no pot apostar més del seu capital.
+  </p>
+  <p>Si ho perd tot, cal mostrar un missatge de que ho ha perdut tot dins l'etiqueta amb <b>id avis</b> i cal deixar el botó del formulari inhabilitat.
+	</p>
+  <p>Tot l'exercici s'ha de resoldre amb l'ús del llenguatge JavaScript, no es pot fer ús de CSS. No es pot editar el codi HTML proporcionat</p>
+	<form>
+    <fieldset>
+        <legend>APOSTA NOVA</legend>
+      <table>
+			<tr><td>Saldo disponible: </td>
+				<td><input type='text' readonly disabled='true' id='saldo' placeholder='1000' size='4'></td></tr>
+			<tr><td>Quantitat apostada: </td>
+				<td><input type='text' id='importAposta' size='4'></td></tr>
+			<tr><td>Suma dels daus: </td>
+				<td><input type='text' id='aposta'  size='4'></td></tr>
+			<tr><td><input type='button' value='APOSTAR' id='boto'></td><td></td></tr>
+			</table>
+    </fieldset>
+   </form>
+        <p id="avis"></p>
+    </body>
+</html>

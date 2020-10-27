@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CORREUS</title>
+        <link href="3_ESTILS.css" rel="stylesheet">
+        <script src="tarifes.js"></script>
+        <script src="3_DNI.js"></script>
+    </head>
+    <body>
+        <h1>ENVIAMENT DE CORREU POSTAL</h1>
+        <p>
+        Cal dissenyar el codi JS adequat que permeti calcular el cost de fer un enviament per correu postal a partir del següent formulari. 
+        </p>
+        <p>
+        <form>
+            <fieldset>
+                <legend>Correu Postal</legend>
+                <p>
+                  <table>
+                    <tr><td>
+                      <span>Destí de l'enviament: </span><br>
+                      <input type="radio" id="peninsula" name="zona" value="peninsula">
+                      <label for="peninsula">Peninsula</label><br>
+                      
+                      <input type="radio" id="canaries" name="zona" value="canaries">
+                      <label for="canaries">Canaries,Ceuta,Melilla i Andorra</label><br>
+                      
+                      <input type="radio" id="ue" name="zona" value="ue">
+                      <label for="ue">Països de la Unió Europea i Gorenlàndia</label><br>
+                      
+                      <input type="radio" id="resta" name="zona" value="resta">
+                      <label for="resta">Resta de Països del món</label><br>
+                    </td><td id='mig'>
+                      <span>Tipus d'enviament: </span><br>
+                      <input type="radio" id="normal" name="tipus" value="normal">
+                      <label for="normal">Normal</label><br>
+
+                      <input type="radio" id="urgent" name="tipus" value="urgent">
+                      <label for="urgent">Urgent</label><br>
+
+                      <input type="radio" id="certificat" name="tipus" value="certificat">
+                      <label for="certificat">Certificat</label><br>
+
+                      <input type="radio" id="urgentcertificat" name="tipus" value="urgentcertificat">
+                      <label for="urgentcertificat">Urgent i Certificat</label><br>                    
+                    </td>
+                    <tr>
+                  </table>
+                </p>
+                 <p>
+                    <label for='pes'>Pes carta: </label>
+                    <input type="text" id='pes' size='4'> grams. <span id='avisPes'>(un valor superior a 0 i menor a 2000)</span>
+                </p>
+                <input type='button' value='calcular' id='boto'> <span id='avisRadios' style='color:red'> </span>
+            </fieldset>
+        <form>
+        </p>
+        <h2>COST DE L'ENVIAMENT => <span id='preu'>???</span> EUROS</h2>        
+        <p>El càlcul només es farà si s'han marcat els dos grups de radios i s'ha indicat un pes adequat. <br>
+        En cas que el pes no sigui vàlid obligar a indicar-ne un de vàlid amb una finestra emergent "prompt", la qual no desapareixerà fins que el valor del pes sigui adequat, tot seguit s'ubicarà el valor dins la caixa de text del formulari.</p>
+        <p>Si l'usuari no ha marcat algun dels dos grups de radios ha de sortir un avis dins l'etiqueta amb id <b>avisRadios</b></p>
+        <p>El cost d'un enviament ve donat per unes constants dins l'arxiu <b>tarifes.js</b></p>
+        <p>Els arxius proporcionats no es poden editar, més que per indica l'origen dels necessaris.</p>
+        <p>Si tot va bé s'informarà del preu de l'enviament dins de l'etiqueta amb id <b>preu</b>.</p>
+    </body>
+</html>

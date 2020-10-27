@@ -1,0 +1,54 @@
+html {
+  font-family: sans-serif;
+}
+
+label {
+  margin-right: 15px;
+  line-height: 32px;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+input[type="radio"]:checked {
+  border: 6px solid black;
+}
+
+input[type="button"],input[type="text"],
+legend {
+  color: white;
+  background-color: orange;
+  padding: 5px 10px;
+  border-radius: 0;
+  border: 1;
+  font-size: 16px;
+}
+
+
+input[type="button"] {
+  background-color: orange;
+  outline: 1px solid white;
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  /*border: 01px solid black;*/
+}
+#mig {
+  border-left: 3px solid orange;
+  padding-left: 20px;
+}
